@@ -61,7 +61,7 @@ export default function FlixDetail({ id }: { id: SelectedFlix }) {
               </div>
               <ul className="mt-6 max-w-3xl text-xl text-gray-300 grid grid-cols-1 lg:grid-cols-2">
                 {Object.entries(meta).map(([key, value]) => (
-                  <li className="flex">
+                  <li className="flex" key={`meta-${key}`}>
                     <span className="mr-2 text-indigo-600">{key}:</span>
                     <span className="font-bold text-slate-700">{value}</span>
                   </li>
@@ -83,7 +83,7 @@ export default function FlixDetail({ id }: { id: SelectedFlix }) {
         </div>
         <ul className="grid grid-cols-1 gap-y-4 mt-14">
           {Object.entries(credits).map(([key, value]) => (
-            <li>
+            <li key={`credits-${key}`}>
               <span className="mr-2 text-lg leading-6 font-medium text-indigo-400">{key}:</span>
               <span className="text-base text-slate-300">{value}</span>
             </li>
