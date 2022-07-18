@@ -42,7 +42,11 @@ export default function ResultsList({
             <div className="relative z-0 inline-flex shadow-sm rounded-md px-4 lg:px-8">
               <button
                 type="button"
-                className="relative inline-flex items-center px-4 py-2 rounded-l-md border border-slate-700 bg-slate-900 text-sm font-medium text-slate-500 hover:bg-indigo-600 hover:text-white transition-colors focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
+                className={
+                  !prev
+                    ? "relative inline-flex items-center px-4 py-2 rounded-l-md border border-slate-700 bg-slate-900 text-sm font-medium text-slate-500 opacity-50"
+                    : "relative inline-flex items-center px-4 py-2 rounded-l-md border border-slate-700 bg-slate-900 text-sm font-medium text-slate-500 hover:bg-indigo-600 hover:text-white transition-colors focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
+                }
                 onClick={prev}
                 disabled={!prev}
               >
@@ -50,7 +54,11 @@ export default function ResultsList({
               </button>
               <button
                 type="button"
-                className="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-slate-700 bg-slate-900 text-sm font-medium text-slate-500 hover:bg-indigo-600 hover:text-white transition-colors focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
+                className={
+                  !next
+                    ? "-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-slate-700 bg-slate-900 text-sm font-medium text-slate-500 opacity-50"
+                    : "-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-slate-700 bg-slate-900 text-sm font-medium text-slate-500 hover:bg-indigo-600 hover:text-white transition-colors focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
+                }
                 onClick={next}
                 disabled={!next}
               >
